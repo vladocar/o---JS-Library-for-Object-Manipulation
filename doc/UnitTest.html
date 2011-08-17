@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Test</title>
+<script src="../src/o.js" type="text/javascript"></script>
+<script type="text/javascript">
+function loadme(){
+
+var o1 = {A:1,B:2};
+var o2 = {C:3,D:4};
+var o3 = {E:5,F:6};
+var o4 = {};
+o4.prototype = {g:7,h:8};
+var o5 = {a:1, b:"jdlsakjd", c:[1,2,3], d:{a:1,b:2,c:2}}
+
+var thisObj = function(){
+this.Z = "Z";
+this.Y = "Y";
+};
+
+function mjau(){
+this.Cat ="mjau";
+
+}
+
+	
+		
+	console.log(o.len(o1));
+	console.log(o.keys(o1));
+	console.log(o.values(o1));
+	console.log(o.add(o1,"c",3));
+	console.log(o.remove(o1,"c",3));
+	console.log(o.extend(o1,{c:3,d:4}));
+	console.log(o.keys(o1));
+	console.log(o.cloneAll(o1,o2,o3));
+	console.log(o.isEmpty(o1));
+	console.log(o.type(o1,"A"));
+	console.log(o.has(o1,"A"));
+	console.log(o.toJSON(o1));
+	
+	//for testing in older browsers like IE6 use alert
+	//alert(y.A);
+	//alert(y.Y)
+
+}
+
+//window.addEventListener('load',loadme,false);
+</script>
+
+</head>
+
+<body onload="loadme()">
+
+Open this example in the browser console.
+</body>
+</html>
