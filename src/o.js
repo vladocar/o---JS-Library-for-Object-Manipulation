@@ -33,7 +33,7 @@ var o = {
         }
         return a;
     },
-    keys: function (o) {
+    keys: Object.keys || function (o) {
         var a = [];
         for (var i in o) {
             if (o.hasOwnProperty(i)) {
