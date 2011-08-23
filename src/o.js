@@ -59,7 +59,7 @@ var o = {
         }
     },
     type: function (o, m) {
-        return typeof o[m];
+        return Object.prototype.toString.call( o[m] );
     },
     has: function (o, m) {
         if (o.hasOwnProperty(m)) {
