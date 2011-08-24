@@ -43,14 +43,15 @@ var o = {
         return a;
     },
     len: function (o) {
-        return Object.keys ? Object.keys(o).length : function() {
+        return Object.keys ? Object.keys(o).length : (function() {
                     var a = 0;
                     for (var i in o) {
                         if (o.hasOwnProperty(i)) {
                             a++;
                         }
                     }
-                };    
+                    return a;
+                })();    
     },
     isEmpty: function (o) {
         if (this.len(o) === 0) {
@@ -60,7 +61,7 @@ var o = {
         }
     },
     type: function (o, m) {
-        return typeof o[m];
+        return Object.prototype.toString.call( o[m] );
     },
     has: function (o, m) {
         if (o.hasOwnProperty(m)) {
