@@ -13,12 +13,13 @@ var o = {
         }
     },
     cloneAll: function () {
-        var ar = arguments.length;
+        var l = arguments.length;
         var T = {};
-        while (ar--) {
-            for (var i in arguments[ar]) {
-                if (arguments[ar].hasOwnProperty(i)) {
-                    T[i] = arguments[ar][i];
+        while (l) {
+    		var ar = arguments[--l];
+            for (var i in ar) {
+                if (ar.hasOwnProperty(i)) {
+                    T[i] = ar[i];
                 }
             }
         }
@@ -43,32 +44,16 @@ var o = {
         return a;
     },
     len: function (o) {
-        return Object.keys ? Object.keys(o).length : (function() {
-                    var a = 0;
-                    for (var i in o) {
-                        if (o.hasOwnProperty(i)) {
-                            a++;
-                        }
-                    }
-                    return a;
-                })();    
+        return keys(o).length;    
     },
     isEmpty: function (o) {
-        if (this.len(o) === 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return !this.len(o);
     },
     type: function (o, m) {
-        return Object.prototype.toString.call( o[m] );
+        return typeof o[m];
     },
     has: function (o, m) {
-        if (o.hasOwnProperty(m)) {
-            return true;
-        } else {
-            return false;
-        }
+        return o.hasOwnProperty(m);
     },
     toJSON: function (o) {
         return JSON.stringify(o);
