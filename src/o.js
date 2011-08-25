@@ -50,7 +50,7 @@ var o = {
         return !this.len(o);
     },
     type: function (o, m) {
-        return typeof o[m];
+        return Object.prototype.toString.call( o[m] );
     },
     has: function (o, m) {
         return o.hasOwnProperty(m);
