@@ -61,7 +61,14 @@ var o = {
         }
     },
     type: function (o, m) {
+        if (!m) return Object.prototype.toString.call( o );
         return Object.prototype.toString.call( o[m] );
+    },
+    isArray : function(o) {
+        return ( this.type(o).indexOf('Array') >= 0 );
+    },  
+    isObject = function(o) {
+        return ( this.type(o).indexOf('Object') >= 0 );
     },
     has: function (o, m) {
         if (o.hasOwnProperty(m)) {
