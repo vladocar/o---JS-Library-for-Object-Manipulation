@@ -52,11 +52,7 @@ var JSON = JSON,
             return this.keys(o).length;   
         },
         isEmpty: function (o) {
-            if (this.len(o) === 0) {
-                return true;
-            } else {
-                return false;
-            }
+            return (this.len(o) === 0);
         },
         type: function (o, m) {
             if (!m) return obj_proto.toString.call( o );
