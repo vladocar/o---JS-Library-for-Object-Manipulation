@@ -43,15 +43,7 @@ var o = {
         return a;
     },
     len: function (o) {
-        return Object.keys ? Object.keys(o).length : (function() {
-                    var a = 0;
-                    for (var i in o) {
-                        if (o.hasOwnProperty(i)) {
-                            a++;
-                        }
-                    }
-                    return a;
-                })();    
+        return this.keys(o).length;   
     },
     isEmpty: function (o) {
         if (this.len(o) === 0) {
