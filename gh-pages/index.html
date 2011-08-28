@@ -202,10 +202,47 @@ console.log(o.has(o1,"a"));
 <div class="code">	
 <code>o.type(o1,"a");
 console.log(o.type(o1,"a")); 
-//number 
+// [object Number]
+console.log(o.type(o1));
+// [object Object]
 </code>
 </div>
 </p>
+
+	<h3>-isObject:</h3>
+	<p>
+		returns true if object is trully object (hash):<br />
+		
+		Example:
+		
+<div class="code">	
+<code>var o1 = { 'a': 1, 'b': 2},
+    a1 = [1, 2];
+console.log( o.isObject(o1) );
+// true
+console.log( o.isObject(a1) );
+// false
+</code>
+</div>
+</p>
+
+	<h3>-isArray:</h3>
+	<p>
+		returns true if object is an array:<br />
+		
+		Example:
+		
+<div class="code">	
+<code>var o1 = { 'a': 1, 'b': 2},
+    a1 = [1, 2];
+console.log( o.isArray(o1) );
+// false
+console.log( o.isArray(a1) );
+// true
+</code>
+</div>
+</p>
+
 	
 	<h3>-isEmpty:</h3>
 	<p>
