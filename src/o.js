@@ -71,11 +71,7 @@ var o = {
         return this.type(o) === "[object Object]";
     },
     has: function (o, m) {
-        if (o.hasOwnProperty(m)) {
-            return true;
-        } else {
-            return false;
-        }
+        return o.hasOwnProperty(m);
     },
     toJSON: function (o) {
         return JSON.stringify(o);
