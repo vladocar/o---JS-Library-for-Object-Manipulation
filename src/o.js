@@ -65,10 +65,10 @@ var o = {
         return Object.prototype.toString.call( o[m] );
     },
     isArray: function(o) {
-        return ( this.type(o).indexOf('Array') >= 0 );
+        return this.type(o) === "[object Array]";
     },  
     isObject: function(o) {
-        return ( this.type(o).indexOf('Object') >= 0 );
+        return this.type(o) === "[object Object]";
     },
     has: function (o, m) {
         if (o.hasOwnProperty(m)) {
