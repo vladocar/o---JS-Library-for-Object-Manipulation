@@ -19,7 +19,7 @@ var o = {
                 if (a.hasOwnProperty(i))
                     T[i] = a[i];
         }
-        return this.toJSON(T);
+        return T;
     },
     values: function (o) {
         var a = [];
