@@ -1,4 +1,7 @@
-var o = {
+(function( win ){
+    
+var temp;
+win.o = {
     add: function (o, m, v) {
         return (o[m] = v);
     },
@@ -77,3 +80,4 @@ var o = {
         return JSON.parse(o);
     }
 };
+})( this )
