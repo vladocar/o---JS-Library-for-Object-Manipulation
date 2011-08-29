@@ -1,69 +1,51 @@
 var o = {
     add: function (o, m, v) {
-        return (o[m] = v);
+        return o[m] = v;
     },
     remove: function (o, m) {
         return delete o[m];
     },
     extend: function (parent, child) {
-        for (var m in child) {
+        for (var m in child)
             parent[m] = child[m];
-        }
     },
     clone: function (o) {
-        var T = {};
-        for (var i in o) {
-            T[i] = o[i];
-        }
-        return T;
+		return extend({}, o);
     },
     cloneAll: function () {
-        var ar = arguments.length;
         var T = {};
-        while (ar--) {
-            for (var i in arguments[ar]) {
-                T[i] = arguments[ar][i];
-            }
+    	var l = arguments.length;
+        while (l--) {
+			var a = arguments[l];
+            for (var i in a)
+                if (a.hasOwnProperty(i))
+                    T[i] = a[i];
         }
         return T;
     },
     values: function (o) {
         var a = [];
-        for (var i in o) {
+        for (var i in o)
             a.push(o[i]);
-        }
         return a;
     },
     keys: function (o) {
         var a = [];
-        for (var i in o) {
+        for (var i in o)
             a.push(i);
-        }
         return a;
     },
     len: function (o) {
-        var a = 0;
-        for (var i in o) {
-            a = a + 1;
-        }
-        return a;
+		return this.keys(o).len;
     },
     isEmpty: function (o) {
-        if (this.len(o) === 0) {
-            return true;
-        } else {
-            return false;
-        }
+        !this.len(o)
     },
     type: function (o, m) {
         return typeof o[m];
     },
     has: function (o, m) {
-        if (o.hasOwnProperty(m)) {
-            return true;
-        } else {
-            return false;
-        }
+        return o.hasOwnProperty(m);
     },
     toJSON: function (o) {
         return JSON.stringify(o);
