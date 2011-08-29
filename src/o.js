@@ -59,10 +59,34 @@ var JSON = JSON,
             return obj_proto.toString.call( o[m] );
         },
         isArray: function(o) {
-            return this.type(o) === "[object Array]";
+            return this.is(o, 'Array');
         },  
         isObject: function(o) {
-            return this.type(o) === "[object Object]";
+            return this.is(o, 'Object');
+        },
+        isRegExp: function(o) {
+            return this.is(o, 'RegExp');
+        },
+        isFunction: function(o) {
+            return this.is(o, 'Function');
+        },
+        isNumber: function(o) {
+            return this.is(o, 'Number');
+        },
+        isString: function(o) {
+            return this.is(o, 'String');
+        }
+        isBoolean: function(o) {
+            return this.is(o, 'Boolean');
+        },
+        isNull: function(o) {
+            return this.is(o, 'Null');
+        },
+        isUndefined: function(o) {
+            return this.is(o, 'Undefined');
+        },
+        is: function(o, t){
+            return this.type(o) === '[object '+t+']';
         },
         has: function (o, m) {
             return o.hasOwnProperty(m);
