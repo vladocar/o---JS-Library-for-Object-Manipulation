@@ -2,7 +2,7 @@
 
 
 var JSON = JSON, 
-    obj_proto = Object.protototype,
+    obj_proto = Object.prototype,
 
     o = {
         add: function (o, m, v) {
