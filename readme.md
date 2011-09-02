@@ -5,3 +5,5 @@ o - is simple lightweight JavaScript library for basic object manipulation. Comp
 Learn more on: http://vladocar.github.com/o---JS-Library-for-Object-Manipulation/
 
 The object methods can be found here (Object Auto Documentation): http://dl.dropbox.com/u/2111778/AutoObjectDocumentation/demos/autoDocs-o-prettify.html
+
+Note* : Some new methods are added setStorage, getStorage, removeStorage that will work only in the new browsers.
