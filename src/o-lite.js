@@ -7,12 +7,12 @@
         remove: function (o, m) {
             return delete o[m];
         },
+        key: function (o, m) {
+            return o[m];
+        },
         extend: function (parent, child) {
             for (var m in child)
             parent[m] = child[m];
-        },
-        clone: function (o) {
-            return extend({}, o);
         },
         cloneAll: function () {
             var T = {};
@@ -53,6 +53,15 @@
         },
         toObject: function (o) {
             return JSON.parse(o);
+        },
+        setStorage: function (n, o) {
+            return localStorage.setItem(n, JSON.stringify(o));
+        },
+        getStorage: function (n) {
+            return JSON.parse(localStorage.getItem(n));
+        },
+        removeStorage: function (n) {
+            return localStorage.removeItem(n);
         }
     };
 })(this);
