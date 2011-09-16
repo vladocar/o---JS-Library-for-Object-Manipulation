@@ -61,6 +61,7 @@ var o = {
         }
     },
     type: function (o, m) {
+        if (!m) return obj_proto.toString.call( o );
         return Object.prototype.toString.call( o[m] );
     },
     has: function (o, m) {
