@@ -84,7 +84,7 @@ var o = {
     },
     isString: function(o) {
         return this.is(o, 'String');
-    }
+    },
     isBoolean: function(o) {
         return this.is(o, 'Boolean');
     },
