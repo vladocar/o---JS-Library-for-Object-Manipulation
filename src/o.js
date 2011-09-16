@@ -53,6 +53,13 @@ var o = {
                     return a;
                 })();    
     },
+    type: function (o, m) {
+        if (!m) return Object.prototype.toString.call( o );
+        return Object.prototype.toString.call( o[m] );
+    },
+    is: function(o, t){
+        return this.type(o) === '[object '+t+']';
+    },
     isEmpty: function (o) {
         if (this.len(o) === 0) {
             return true;
@@ -60,12 +67,32 @@ var o = {
             return false;
         }
     },
-    type: function (o, m) {
-        if (!m) return Object.prototype.toString.call( o );
-        return Object.prototype.toString.call( o[m] );
+    isArray: function(o) {
+        return this.is(o, 'Array');
     },
-    is: function(o, t){
-        return this.type(o) === '[object '+t+']';
+    isObject: function(o) {
+        return this.is(o, 'Object');
+    },
+    isRegExp: function(o) {
+        return this.is(o, 'RegExp');
+    },
+    isFunction: function(o) {
+        return this.is(o, 'Function');
+    },
+    isNumber: function(o) {
+        return this.is(o, 'Number');
+    },
+    isString: function(o) {
+        return this.is(o, 'String');
+    }
+    isBoolean: function(o) {
+        return this.is(o, 'Boolean');
+    },
+    isNull: function(o) {
+        return this.is(o, 'Null');
+    },
+    isUndefined: function(o) {
+        return this.is(o, 'Undefined');
     },
     has: function (o, m) {
         if (o.hasOwnProperty(m)) {
