@@ -1,4 +1,19 @@
-var o = {
+(function(global, undefined){
+
+var 
+
+// var-shortcuts (access to local vars is faster)
+JSON = JSON,
+obj_proto = Object.prototype,
+
+// some helper vars may be
+// foo = 'something',
+// bar = { any: 'thing' },
+
+// the Library
+LIB = {
+        
+        
     add: function (o, m, v) {
         return (o[m] = v);
     },
@@ -54,45 +69,45 @@ var o = {
                 })();    
     },
     type: function (o, m) {
-        if (!m) return Object.prototype.toString.call( o );
-        return Object.prototype.toString.call( o[m] );
+        if (!m) return obj_proto.toString.call( o );
+        return obj_proto.toString.call( o[m] );
     },
     is: function(o, t){
-        return this.type(o) === '[object '+t+']';
+        return LIB.type(o) === '[object '+t+']';
     },
     isEmpty: function (o) {
-        if (this.len(o) === 0) {
+        if (LIB.len(o) === 0) {
             return true;
         } else {
             return false;
         }
     },
     isArray: function(o) {
-        return this.is(o, 'Array');
+        return LIB.is(o, 'Array');
     },
     isObject: function(o) {
-        return this.is(o, 'Object');
+        return LIB.is(o, 'Object');
     },
     isRegExp: function(o) {
-        return this.is(o, 'RegExp');
+        return LIB.is(o, 'RegExp');
     },
     isFunction: function(o) {
-        return this.is(o, 'Function');
+        return LIB.is(o, 'Function');
     },
     isNumber: function(o) {
-        return this.is(o, 'Number');
+        return LIB.is(o, 'Number');
     },
     isString: function(o) {
-        return this.is(o, 'String');
+        return LIB.is(o, 'String');
     },
     isBoolean: function(o) {
-        return this.is(o, 'Boolean');
+        return LIB.is(o, 'Boolean');
     },
     isNull: function(o) {
-        return this.is(o, 'Null');
+        return LIB.is(o, 'Null');
     },
     isUndefined: function(o) {
-        return this.is(o, 'Undefined');
+        return LIB.is(o, 'Undefined');
     },
     has: function (o, m) {
         if (o.hasOwnProperty(m)) {
@@ -108,3 +123,9 @@ var o = {
         return JSON.parse(o);
     }
 };
+
+
+// Sharing to global scope
+global.o = LIB;
+
+}(window));
