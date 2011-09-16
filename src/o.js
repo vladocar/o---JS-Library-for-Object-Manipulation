@@ -64,6 +64,9 @@ var o = {
         if (!m) return Object.prototype.toString.call( o );
         return Object.prototype.toString.call( o[m] );
     },
+    is: function(o, t){
+        return this.type(o) === '[object '+t+']';
+    },
     has: function (o, m) {
         if (o.hasOwnProperty(m)) {
             return true;
