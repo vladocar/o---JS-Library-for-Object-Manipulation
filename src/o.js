@@ -66,9 +66,9 @@
                 var a = (m) ? o[m] : o;
                 // exception for undefined and null
                 if ( a === null ) {
-                    return "null";
+                    return "[object Null]";
                 } else if (a === undefined) {
-                    return "undefined";
+                    return "[object Undefined]";
                 } else {
                 // in other cases
                   return Object.prototype.toString.call(a);  
