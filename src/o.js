@@ -61,11 +61,17 @@
             isEmpty: function (o) {
                 return !this.len(o);
             },
+            
             type: function (o, m) {
-                if (!m) {
-                    return Object.prototype.toString.call(o);
+                var a = (m) ? o[m] : o;
+                // exception for undefined and null
+                if ( a === null ) {
+                    return "null";
+                } else if (a === undefined) {
+                    return "undefined";
                 } else {
-                    return Object.prototype.toString.call(o[m]);
+                // in other cases
+                  return Object.prototype.toString.call(a);  
                 }
             },
             is: function (o, t) {
