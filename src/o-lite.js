@@ -37,8 +37,7 @@
                 }
                 return a;
             },
-            keys: Object.keys ||
-            function (o) {
+            keys: function (o) {
                 var a = [];
                 for (var i in o) {
                     a.push(i);
