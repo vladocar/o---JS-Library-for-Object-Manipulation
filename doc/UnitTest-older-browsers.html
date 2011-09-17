@@ -18,6 +18,9 @@ var o2 = {C:3,D:4};
 var o3 = {E:5,F:6};
 var o4 = {};
 o4.prototype = {g:7,h:8};
+var oz = function(){};
+var ar = [1,2,3];
+
 
 var thisObj = function(){
 this.Z = "Z";
@@ -43,6 +46,15 @@ this.Cat ="mjau";
 	alert(o.type(o1,"A"));
 	alert(o.has(o1,"A"));
 	alert(o.toJSON(o1));
+	alert(o.isNumber(o1));
+	alert(o.isObject(o1));
+	alert(o.isUndefined(o1));
+	alert(o.isRegExp(o1));
+	
+	alert(o.isArray(ar));
+	
+	alert(o.isFunction(oz));
+	
 	//for testing in older browsers like IE6 use alert
 	//alert(y.A);
 	//alert(y.Y)

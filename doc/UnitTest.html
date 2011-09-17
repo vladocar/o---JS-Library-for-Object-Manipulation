@@ -17,6 +17,8 @@ var o3 = {E:5,F:6};
 var o4 = {};
 o4.prototype = {g:7,h:8};
 var o5 = {a:1, b:"jdlsakjd", c:[1,2,3], d:{a:1,b:2,c:2}}
+var oz = function(){};
+var ar = [1,2,3];
 
 var thisObj = function(){
 this.Z = "Z";
@@ -40,9 +42,19 @@ this.Cat ="mjau";
 	console.log(o.cloneAll(o1,o2,o3));
 	console.log(o.isEmpty(o1));
 	console.log(o.type(o1,"A"));
+	console.log(o.type(o1,10));
 	console.log(o.has(o1,"A"));
-	console.log(o.toJSON(o1));
 	
+	console.log(o.toJSON(o1));
+	console.log(o.isNumber(o1));
+	console.log(o.isObject(o1));
+	console.log(o.isUndefined(o1));
+	console.log(o.isRegExp(o1));
+	
+	console.log(o.isArray(ar));
+	
+	console.log(o.isFunction(oz));
+	console.log(o.type(o1));
 	//for testing in older browsers like IE6 use alert
 	//alert(y.A);
 	//alert(y.Y)
